@@ -1,15 +1,19 @@
+/** @format */
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Young_Serif, Outfit } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const youngSerif = Young_Serif({
+  weight: "400",
+  style: "normal",
+  variable: "--young-serif",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const outfit = Outfit({
+  weight: ["400", "600", "700"],
+  style: "normal",
+  variable: "--outfit",
 });
 
 export const metadata: Metadata = {
@@ -24,9 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${outfit.variable} ${youngSerif.variable} antialiased`}>
         {children}
       </body>
     </html>
