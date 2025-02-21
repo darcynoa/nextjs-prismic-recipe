@@ -1,0 +1,45 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "recipe_main_image": {
+          "type": "Image",
+          "config": {
+            "label": "Recipe Main Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "header": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Header",
+            "placeholder": "Simple Omelette Recipe",
+            "allowTargetBlank": false,
+            "single": "heading1"
+          }
+        },
+        "recipe_overview": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Recipe Overview",
+            "placeholder": "A brief about the recipe",
+            "allowTargetBlank": false,
+            "single": "paragraph"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

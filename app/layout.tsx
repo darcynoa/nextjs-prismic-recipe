@@ -7,12 +7,14 @@ import "./globals.css";
 const youngSerif = Young_Serif({
   weight: "400",
   style: "normal",
+  subsets: ["latin"],
   variable: "--young-serif",
 });
 
 const outfit = Outfit({
   weight: ["400", "600", "700"],
   style: "normal",
+  subsets: ["latin"],
   variable: "--outfit",
 });
 

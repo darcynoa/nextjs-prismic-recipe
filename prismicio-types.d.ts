@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -71,6 +71,68 @@ export type HomepageDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomepageDocument;
 
+/**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Recipe Main Image field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.recipe_main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  recipe_main_image: prismic.ImageField<never>;
+
+  /**
+   * Header field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Simple Omelette Recipe
+   * - **API ID Path**: hero.default.primary.header
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  header: prismic.TitleField;
+
+  /**
+   * Recipe Overview field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: A brief about the recipe
+   * - **API ID Path**: hero.default.primary.recipe_overview
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  recipe_overview: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -96,6 +158,10 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HeroSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
     };
   }
 }
