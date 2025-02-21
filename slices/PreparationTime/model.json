@@ -1,0 +1,40 @@
+{
+  "id": "preparation_time",
+  "type": "SharedSlice",
+  "name": "PreparationTime",
+  "description": "PreparationTime",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "total_time": {
+          "type": "Text",
+          "config": {
+            "label": "Total Time",
+            "placeholder": "2 days, 4 hours"
+          }
+        },
+        "prep_time": {
+          "type": "Text",
+          "config": {
+            "label": "Prep Time",
+            "placeholder": "30 minutes"
+          }
+        },
+        "cook_time": {
+          "type": "Text",
+          "config": {
+            "label": "Cook Time",
+            "placeholder": "2 days, 3 hours, 30 minutes"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

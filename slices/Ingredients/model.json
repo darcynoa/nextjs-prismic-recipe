@@ -1,0 +1,28 @@
+{
+  "id": "ingredients",
+  "type": "SharedSlice",
+  "name": "Ingredients",
+  "description": "Ingredients",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "ingredient_list": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Ingredient List",
+            "placeholder": "* 1 tbsp of depression",
+            "allowTargetBlank": false,
+            "single": "list-item"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -30,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} ${youngSerif.variable} antialiased`}>
+      <body
+        className={`${outfit.variable} ${youngSerif.variable} antialiased lg:bg-stone-100 text-stone-900`}
+      >
         {children}
       </body>
     </html>

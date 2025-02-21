@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = PreparationTimeSlice | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -133,6 +133,116 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *Ingredients → Default → Primary*
+ */
+export interface IngredientsSliceDefaultPrimary {
+  /**
+   * Ingredient List field in *Ingredients → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: * 1 tbsp of depression
+   * - **API ID Path**: ingredients.default.primary.ingredient_list
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  ingredient_list: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Ingredients Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IngredientsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IngredientsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Ingredients*
+ */
+type IngredientsSliceVariation = IngredientsSliceDefault;
+
+/**
+ * Ingredients Shared Slice
+ *
+ * - **API ID**: `ingredients`
+ * - **Description**: Ingredients
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IngredientsSlice = prismic.SharedSlice<
+  "ingredients",
+  IngredientsSliceVariation
+>;
+
+/**
+ * Primary content in *PreparationTime → Default → Primary*
+ */
+export interface PreparationTimeSliceDefaultPrimary {
+  /**
+   * Total Time field in *PreparationTime → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 2 days, 4 hours
+   * - **API ID Path**: preparation_time.default.primary.total_time
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  total_time: prismic.KeyTextField;
+
+  /**
+   * Prep Time field in *PreparationTime → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 30 minutes
+   * - **API ID Path**: preparation_time.default.primary.prep_time
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  prep_time: prismic.KeyTextField;
+
+  /**
+   * Cook Time field in *PreparationTime → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 2 days, 3 hours, 30 minutes
+   * - **API ID Path**: preparation_time.default.primary.cook_time
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cook_time: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PreparationTime Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PreparationTimeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PreparationTimeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PreparationTime*
+ */
+type PreparationTimeSliceVariation = PreparationTimeSliceDefault;
+
+/**
+ * PreparationTime Shared Slice
+ *
+ * - **API ID**: `preparation_time`
+ * - **Description**: PreparationTime
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PreparationTimeSlice = prismic.SharedSlice<
+  "preparation_time",
+  PreparationTimeSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -162,6 +272,14 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      IngredientsSlice,
+      IngredientsSliceDefaultPrimary,
+      IngredientsSliceVariation,
+      IngredientsSliceDefault,
+      PreparationTimeSlice,
+      PreparationTimeSliceDefaultPrimary,
+      PreparationTimeSliceVariation,
+      PreparationTimeSliceDefault,
     };
   }
 }

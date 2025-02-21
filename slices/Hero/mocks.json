@@ -32,8 +32,10 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Table"
-						}
+							"text": "Simple Omelette Recipe",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},

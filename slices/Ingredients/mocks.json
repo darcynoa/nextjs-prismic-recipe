@@ -1,0 +1,46 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"ingredient_list": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Michael",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Trevor",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Franklin",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Lamar",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

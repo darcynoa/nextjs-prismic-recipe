@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"prep_time": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "4 minutes"
+			},
+			"total_time": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Approximately 10 minutes"
+			},
+			"cook_time": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "4 details"
+			}
+		},
+		"items": []
+	}
+]

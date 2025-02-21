@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "preparation_time": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

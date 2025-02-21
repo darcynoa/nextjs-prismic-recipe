@@ -19,16 +19,30 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicNextImage field={slice.primary.recipe_main_image} />
+      <div className="-mx-[2rem] lg:mx-auto">
+        <PrismicNextImage
+          field={slice.primary.recipe_main_image}
+          className="w-[100%] object-cover"
+        />
+      </div>
       <PrismicRichText
         field={slice.primary.header}
         components={{
           heading1: ({ children }) => (
-            <h1 className="text-red-600 text-[4rem]">{children}</h1>
+            <h1 className="text-stone-900 font-serif text-[2.5rem] leading-[1] my-6 lg:text-[3rem]">
+              {children}
+            </h1>
           ),
         }}
       />
-      <PrismicRichText field={slice.primary.recipe_overview} />
+      <PrismicRichText
+        field={slice.primary.recipe_overview}
+        components={{
+          paragraph: ({ children }) => (
+            <p className="font-sans text-brown-800 text-[1.1rem]">{children}</p>
+          ),
+        }}
+      />
     </section>
   );
 };
