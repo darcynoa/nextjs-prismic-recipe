@@ -18,7 +18,7 @@
             "label": "Ingredient List",
             "placeholder": "* 1 tbsp of depression",
             "allowTargetBlank": false,
-            "single": "list-item"
+            "multi": "list-item"
           }
         }
       },

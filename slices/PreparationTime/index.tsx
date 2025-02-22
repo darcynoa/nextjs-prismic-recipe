@@ -21,7 +21,7 @@ const PreparationTime: FC<PreparationTimeProps> = ({ slice }) => {
       className="bg-rose-50 p-6 rounded-xl"
     >
       <h3 className="font-sans font-bold text-rose-800">Preparation time</h3>
-      <ul className="font-sans text-brown-800 list-disc list-inside">
+      <ul className="font-sans text-brown-800 list-disc list-inside marker:text-rose-800">
         <li className="my-2">
           <span className="font-semiBold">Total:&nbsp;</span>
           {slice.primary.total_time}

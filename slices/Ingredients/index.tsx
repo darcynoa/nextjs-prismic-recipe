@@ -4,6 +4,7 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import SubHeading from "@/components/SubHeading";
+import Divider from "@/components/Divider";
 
 /**
  * Props for `Ingredients`.
@@ -24,16 +25,13 @@ const Ingredients: FC<IngredientsProps> = ({ slice }) => {
         field={slice.primary.ingredient_list}
         components={{
           list: ({ children }) => (
-            <ul className="text-[1.5rem]">
-              {children.map((item, index) => (
-                <li key={index} className="">
-                  {item}
-                </li>
-              ))}
+            <ul className="text-[1rem] font-sans text-stone-900 list-disc list-outside pl-8 marker:text-[1rem] marker:text-brown-800">
+              {children}
             </ul>
           ),
         }}
       />
+      <Divider />
     </section>
   );
 };

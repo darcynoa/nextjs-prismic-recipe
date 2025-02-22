@@ -12,7 +12,7 @@ export default async function Page() {
   const page = await client.getSingle("homepage");
 
   return (
-    <div className="max-w-[700px] bg-white lg:rounded-[2rem] px-[2rem] mx-auto lg:mt-[4rem] lg:pt-[2rem] flex flex-col gap-8">
+    <div className="max-w-[700px] bg-white lg:rounded-[2rem] px-[2rem] pb-8 mx-auto lg:mb-20 lg:mt-[4rem] lg:pt-[2rem] flex flex-col gap-8">
       <SliceZone slices={page.data.slices} components={components} />
     </div>
   );

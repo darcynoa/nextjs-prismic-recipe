@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = PreparationTimeSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | InstructionsSlice
+  | IngredientsSlice
+  | PreparationTimeSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -179,6 +183,78 @@ export type IngredientsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Instructions → Default → Primary → Instruction*
+ */
+export interface InstructionsSliceDefaultPrimaryInstructionItem {
+  /**
+   * Title field in *Instructions → Default → Primary → Instruction*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Mince the anxiety
+   * - **API ID Path**: instructions.default.primary.instruction[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Instructions → Default → Primary → Instruction*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Place the anxiety on the chopping board....
+   * - **API ID Path**: instructions.default.primary.instruction[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Instructions → Default → Primary*
+ */
+export interface InstructionsSliceDefaultPrimary {
+  /**
+   * Instruction field in *Instructions → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: instructions.default.primary.instruction[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  instruction: prismic.GroupField<
+    Simplify<InstructionsSliceDefaultPrimaryInstructionItem>
+  >;
+}
+
+/**
+ * Default variation for Instructions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InstructionsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<InstructionsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Instructions*
+ */
+type InstructionsSliceVariation = InstructionsSliceDefault;
+
+/**
+ * Instructions Shared Slice
+ *
+ * - **API ID**: `instructions`
+ * - **Description**: Instructions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InstructionsSlice = prismic.SharedSlice<
+  "instructions",
+  InstructionsSliceVariation
+>;
+
+/**
  * Primary content in *PreparationTime → Default → Primary*
  */
 export interface PreparationTimeSliceDefaultPrimary {
@@ -276,6 +352,11 @@ declare module "@prismicio/client" {
       IngredientsSliceDefaultPrimary,
       IngredientsSliceVariation,
       IngredientsSliceDefault,
+      InstructionsSlice,
+      InstructionsSliceDefaultPrimaryInstructionItem,
+      InstructionsSliceDefaultPrimary,
+      InstructionsSliceVariation,
+      InstructionsSliceDefault,
       PreparationTimeSlice,
       PreparationTimeSliceDefaultPrimary,
       PreparationTimeSliceVariation,

@@ -1,0 +1,46 @@
+{
+  "id": "instructions",
+  "type": "SharedSlice",
+  "name": "Instructions",
+  "description": "Instructions",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "instruction": {
+          "type": "Group",
+          "config": {
+            "label": "Instruction",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title",
+                  "placeholder": "Mince the anxiety",
+                  "allowTargetBlank": false,
+                  "single": "strong"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description",
+                  "placeholder": "Place the anxiety on the chopping board....",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

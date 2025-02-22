@@ -7,36 +7,10 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "list-item",
+						"type": "paragraph",
 						"content": {
-							"text": "Michael",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Trevor",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Franklin",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "list-item",
-						"content": {
-							"text": "Lamar",
-							"spans": []
-						},
-						"direction": "ltr"
+							"text": "Mollit et excepteur aliquip incididunt. Esse aliqua deserunt proident cillum Lorem."
+						}
 					}
 				]
 			}

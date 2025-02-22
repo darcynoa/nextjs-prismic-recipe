@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "instructions": {
+              "type": "SharedSlice"
+            },
+            "ingredients": {
+              "type": "SharedSlice"
+            },
             "preparation_time": {
               "type": "SharedSlice"
             },
